@@ -32,9 +32,6 @@ import FreeCAD
 from PySide import QtGui,QtCore
 import FreeCAD as App
 import FreeCADGui as gui
-from PySide.QtCore import *
-from PySide.QtGui import *
-#import math
 
 
 class CB_ToolBox(QtGui.QDockWidget):
