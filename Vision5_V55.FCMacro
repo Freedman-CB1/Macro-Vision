@@ -32,8 +32,8 @@ import FreeCAD
 from PySide import QtGui,QtCore
 import FreeCAD as App
 import FreeCADGui as gui
-from PySide.QtCore import *
-from PySide.QtGui import *
+#from PySide.QtCore import *
+#from PySide.QtGui import *
 #import math
 
 
@@ -673,24 +673,24 @@ class CB_ToolBox(QtGui.QDockWidget):
                     else:
                         obj.ViewObject.Visibility = True
 
-        if obj.ViewObject.PointSize == 1.0:        # what to do with masked
-            if str(obj.TypeId) != "Part::Helix" and str(obj.TypeId) != "Part::Spiral" and str(obj.TypeId) != "Part::Line" and str(obj.TypeId) != "Part::Ellipse" and str(obj.Name) != "BaseFeature":
-                if str(obj.TypeId) != "Part::RegularPolygon" and str(obj.TypeId) != "Part::Circle" :  
-                   # print("mm",obj.ViewObject.PointSize)
-                    self.point_fraction = round(obj.ViewObject.PointSize ,2)
-                    if(self.point_fraction !=  obj.ViewObject.PointSize):     # if wireframe        
-                        if body_found == True:
-                            ob1.ViewObject.Visibility = True
-                            obj.ViewObject.DisplayMode  = self.dmode_text  
-                        else:
-                            obj.ViewObject.Visibility = True
-                            obj.ViewObject.DisplayMode  = self.dmode_text  
-                    else:
-                        if body_found == True:
-                            ob1.ViewObject.Visibility = True
-                            obj.ViewObject.DisplayMode  = self.dmode_text  
-                        else:
-                            obj.ViewObject.Visibility = True                                      
+ #       if obj.ViewObject.PointSize == 1.0:        # what to do with masked
+ #           if str(obj.TypeId) != "Part::Helix" and str(obj.TypeId) != "Part::Spiral" and str(obj.TypeId) != "Part::Line" and str(obj.TypeId) != "Part::Ellipse" and str(obj.Name) != "BaseFeature":
+ #               if str(obj.TypeId) != "Part::RegularPolygon" and str(obj.TypeId) != "Part::Circle" :  
+ #                  # print("mm",obj.ViewObject.PointSize)
+ #                   self.point_fraction = round(obj.ViewObject.PointSize ,2)
+ #                   if(self.point_fraction !=  obj.ViewObject.PointSize):     # if wireframe        
+ #                       if body_found == True:
+ #                           ob1.ViewObject.Visibility = True
+ #                           obj.ViewObject.DisplayMode  = self.dmode_text  
+ #                       else:
+ #                           obj.ViewObject.Visibility = True
+ #                           obj.ViewObject.DisplayMode  = self.dmode_text  
+ #                   else:
+ #                       if body_found == True:
+ #                           ob1.ViewObject.Visibility = True
+ #                           obj.ViewObject.DisplayMode  = self.dmode_text  
+ #                       else:
+ #                           obj.ViewObject.Visibility = True                                      
 
 
   
