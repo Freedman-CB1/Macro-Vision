@@ -595,7 +595,7 @@ class CB_ToolBox(QtGui.QDockWidget):
                 ob1=obj
                 if hasattr(obj.ViewObject,'PointSize')  and str(obj.TypeId) != "Sketcher::SketchObject": #  and str(type(obj)) != "<class 'PrimitivePy'>":
                     if str(obj.TypeId) != "PartDesign::Plane" and str(obj.TypeId) != "App::Origin" and str(obj.TypeId) != "App::Plane" and str(obj.TypeId) != "App::Line" and str(obj.TypeId) != "PartDesign::ShapeBinder" and str(obj.TypeId) != "PartDesign::SubShapeBinder" and str(obj.Name) != "ShapeString":  
-                        if str(obj) == "<body object>" or  str(obj) == "<PartDesign::FeatureBase>":
+                        if str(obj) == "<body object>": # or  str(obj) == "<PartDesign::FeatureBase>":
                             #FreeCAD.Console.PrintMessage("obj.Name = "+obj.Name+"\nobj.Label = "+obj.Label+"\nstr(obj) = "+str(obj)+"\nstr(type(obj)) = "+str(type(obj))+ "\nobj.TypeId = "+obj.TypeId  +  " \n\n")
                             if hasattr(obj,'Tip'):
                                 if hasattr(obj.Tip,'Name') :  
