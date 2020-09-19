@@ -827,8 +827,8 @@ class CB_ToolBox(QtGui.QDockWidget):
         if  self.show_object ==  True or   self.pic_vis_at == True:      
             try:
                 if element[0] == "E"  or element[0] == "F" or element[0] == "V"  or element[0] == "P"  and  self.sketch_in ==False:  #
-                    self.pad = FreeCADGui.Selection.getSelection()[0]  
-		    Gui.Selection.clearSelection()
+                    self.pad = FreeCADGui.Selection.getSelection()[0]
+                    Gui.Selection.clearSelection()
                     #FreeCAD.Console.PrintMessage("obj.Name = "+self.pad.Name + "\n\n")   #+"\nobj.Label = "+self.pad.Label+"\nstr(obj) = "+str(obj)+"\nstr(type(obj)) = "+str(type(self.pad.obj))+ "\nobj.TypeId = "+self.pad.TypeId  +  " \n\n")
                     if self.pad.Label == u'ShapeBinder' or self.pad.Label == u'SubShapeBinder' :
                         self.pass_this =True
