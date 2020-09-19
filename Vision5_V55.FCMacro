@@ -827,7 +827,8 @@ class CB_ToolBox(QtGui.QDockWidget):
         if  self.show_object ==  True or   self.pic_vis_at == True:      
             try:
                 if element[0] == "E"  or element[0] == "F" or element[0] == "V"  or element[0] == "P"  and  self.sketch_in ==False:  #
-                    self.pad = FreeCADGui.Selection.getSelection()[0]                    
+                    self.pad = FreeCADGui.Selection.getSelection()[0]  
+		    Gui.Selection.clearSelection()
                     #FreeCAD.Console.PrintMessage("obj.Name = "+self.pad.Name + "\n\n")   #+"\nobj.Label = "+self.pad.Label+"\nstr(obj) = "+str(obj)+"\nstr(type(obj)) = "+str(type(self.pad.obj))+ "\nobj.TypeId = "+self.pad.TypeId  +  " \n\n")
                     if self.pad.Label == u'ShapeBinder' or self.pad.Label == u'SubShapeBinder' :
                         self.pass_this =True
@@ -855,14 +856,14 @@ class CB_ToolBox(QtGui.QDockWidget):
                         self.pad = self.pad2
 
                     self.pad9=self.pad.getParentGeoFeatureGroup()   #  find the Part name if there is one
-                    if self.pad9 != 'None'  and  self.object_part_flag ==False  and  self.pass_this ==  False  and  self.part_lock ==False:   # if not a Part and button selection and not a 
-                        Gui.Selection.clearSelection() 
+                    if self.pad9 != 'None'  and  self.object_part_flag ==False  and  self.pass_this ==  False  and  self.part_lock ==False and self.pad9.Type != "Assembly4 Model":   # if not a Part and button selection and not a 
+                      #  Gui.Selection.clearSelection() 
                         self.pass_this = True
                         self.set_part_vis(self.pad9,self.pad)  # this is a branch off to edit mode
 
            #############  --------------------------------   ########### start of processing
                     if  self.show_object ==  True and  self.pass_this ==  False and  self.ct_points == False :
-                        Gui.Selection.clearSelection()  
+                      #  Gui.Selection.clearSelection()  
                     
                         if self.pad.ViewObject.PointSize  < 12:   #>=0.99 and  self.pad.ViewObject.PointSize <= 1.50 :
                             if self.mode_wireframe == True:                
@@ -877,7 +878,7 @@ class CB_ToolBox(QtGui.QDockWidget):
                           
                         self.pad.ViewObject.PointColor = self.pad.ViewObject.ShapeColor
                 
-                Gui.Selection.clearSelection()               
+             #   Gui.Selection.clearSelection()               
             except:
                 None
 
@@ -899,9 +900,9 @@ class CB_ToolBox(QtGui.QDockWidget):
                 else:
                     if self.mode_wireframe == True :                
                         obj.ViewObject.DisplayMode  =  u"Wireframe"
-                        obj.ViewObject.PointSize  =  round(self.page_number + .001,3)   #self.small_point_size   put number here
+                        obj.ViewObject.PointSize  =  1.0  #round(self.page_number + .001,3)   #self.small_point_size   put number here
                     else:
-                        obj.ViewObject.PointSize  =  round(self.page_number,2)   #self.small_point_size
+                        obj.ViewObject.PointSize  =  1.0  #round(self.page_number,2)   #self.small_point_size
                         if str(obj.TypeId) != "Part::Helix" and str(obj.TypeId) != "Part::Spiral" and str(obj.TypeId) != "Part::Line" and str(obj.TypeId) != "Part::Ellipse" and str(obj.Name) != "BaseFeature":
                             if str(obj.TypeId) != "Part::RegularPolygon" and str(obj.TypeId) != "Part::Circle": 
                                 obj.ViewObject.DisplayMode  = self.dmode_text 
