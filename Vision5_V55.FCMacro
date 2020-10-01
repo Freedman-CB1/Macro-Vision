@@ -299,21 +299,21 @@ class CB_ToolBox(QtGui.QDockWidget):
     def on_high_res(self):
         doc = FreeCAD.ActiveDocument
         for obj in doc.Objects:
-            if obj.TypeId[:4] == 'Part':
+            if obj.TypeId[:4] == 'Part' or obj.TypeId == "Sketcher::SketchObject":
                 if hasattr(obj.ViewObject,'Deviation'):  # should be a sketch
                     obj.ViewObject.Deviation = 0.05 ;        obj.ViewObject.AngularDeflection = 10.0
 
     def on_med_res(self):
         doc = FreeCAD.ActiveDocument
         for obj in doc.Objects:
-            if obj.TypeId[:4] == 'Part':
+            if obj.TypeId[:4] == 'Part' or obj.TypeId == "Sketcher::SketchObject":
                 if hasattr(obj.ViewObject,'Deviation'):  # should be a sketch
                     obj.ViewObject.Deviation = 0.1 ;        obj.ViewObject.AngularDeflection = 28.5
 
     def on_low_res(self):
         doc = FreeCAD.ActiveDocument
         for obj in doc.Objects:
-            if obj.TypeId[:4] == 'Part':
+            if obj.TypeId[:4] == 'Part' or obj.TypeId == "Sketcher::SketchObject":
                 if hasattr(obj.ViewObject,'Deviation'):  # should be a sketch
                    obj.ViewObject.Deviation = 0.2 ;        obj.ViewObject.AngularDeflection = 28.5
 
