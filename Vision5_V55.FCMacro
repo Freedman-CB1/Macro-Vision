@@ -787,7 +787,7 @@ class CB_ToolBox(QtGui.QDockWidget):
             self.singles_list[i][0].setEnabled(True)
          self.editor_list[0][0].setEnabled(True) ; self.editor_list[1][0].setEnabled(True) ; self.editor_list[2][0].setEnabled(True) ; self.editor_list[3][0].setEnabled(True) ; self.global_list[3][0].setEnabled(True)
          if self.pic_vis_at == True or self.show_object == True:
-            self.set_background_red()
+            self.set_background_blue()
 
                    
     def set_transparency_pick(self,data,pad):
