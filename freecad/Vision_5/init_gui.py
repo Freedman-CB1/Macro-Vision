@@ -27,7 +27,7 @@
 #*                                                                         *
 #*   Juergen Riegel 2002                                                   *
 #*                                                                         *
-#* Also copyright Keith Sloan                                              * 
+#* Also copyright Chris Berg                                              * 
 #***************************************************************************/
 
 import FreeCAD
@@ -38,10 +38,10 @@ def joinDir(path) :
     __dirname__ = os.path.dirname(__file__)
     return(os.path.join(__dirname__,path))
     
-    import vision_5
+    
     #processGDML(doc,joinDir("Mod/GDML/Resources/Default.gdml"),False,True)
 
-class Vision_5_Workbench ( FreeCADGui.Workbench ):
+class Vision_5_Workbench (Workbench):
 
     
     "Vision_5 workbench object"
@@ -51,11 +51,13 @@ class Vision_5_Workbench ( FreeCADGui.Workbench ):
         self.__class__.ToolTip = "Vision_5 Workbench"
 
     def Initialize(self):
+        import vision_5
         def QT_TRANSLATE_NOOP(scope, text):
             return text
         
     def Activated(self):
         "This function is executed when the workbench is activated"
+        vision_5
         print ("Activated")
         return
 
