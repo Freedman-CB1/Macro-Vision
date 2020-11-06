@@ -37,12 +37,13 @@ def joinDir(path) :
     import os
     __dirname__ = os.path.dirname(__file__)
     return(os.path.join(__dirname__,path))
-
-    processGDML(doc,joinDir("Mod/GDML/Resources/Default.gdml"),False,True)
+    
+    import vision_5
+    #processGDML(doc,joinDir("Mod/GDML/Resources/Default.gdml"),False,True)
 
 class Vision_5_Workbench ( FreeCADGui.Workbench ):
 
-    import vision_5
+    
     "Vision_5 workbench object"
     def __init__(self):
         self.__class__.Icon = joinDir("Resources/icons/vision_5.svg")
