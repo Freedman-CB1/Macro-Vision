@@ -42,6 +42,7 @@ def joinDir(path) :
 
 class Vision_5_Workbench ( FreeCADGui.Workbench ):
 
+    import vision_5
     "Vision_5 workbench object"
     def __init__(self):
         self.__class__.Icon = joinDir("Resources/icons/vision_5.svg")
