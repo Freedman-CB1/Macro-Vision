@@ -31,33 +31,21 @@
 #***************************************************************************/
 
 import FreeCAD
-import FreeCADGui
 
-#def joinDir(path) :
-#    import os
-#    __dirname__ = os.path.dirname(__file__)
-#    return(os.path.join(__dirname__,path))
 __title__ = "Vision_5"
-__author__ = "Chris Berg"
-__url__ = "https://github.com/Freedman-CB1/Macro-Vision.git"
+__author__ = "Me"
+__url__ = "https://github.com/Freedman-CB1/Macro-Vision"
 
-# get the path of the py python script
 path_V5 = os.path.dirname(vision_5.__file__)
 
-#path_V5_icons = os.path.join(path_V5, 'Resources', 'Icons')
-#path_V5_utils = os.path.join(path_V5, 'Utils')
-#path_V5_resources = os.path.join(path_V5, 'Resources')
-#path_V5_ui = os.path.join(path_V5, 'Resources', 'Ui')  
-
-
-class Vision_5_Workbench (Workbench):
+class Vision_5_Workbench(Workbench):
 
     
     "Vision_5 workbench object"
     def __init__(self):
         self.__class__.Icon = joinDir("vision_5.svg")
         self.__class__.MenuText = "Vision_5"
-        self.__class__.ToolTip = "Vision_5 Workbench"
+        self.__class__.ToolTip = "Vision"
 
     def Initialize(self):
         import vision_5
@@ -66,7 +54,6 @@ class Vision_5_Workbench (Workbench):
         
     def Activated(self):
         "This function is executed when the workbench is activated"
-        vision_5
         print ("Activated")
         return
 
