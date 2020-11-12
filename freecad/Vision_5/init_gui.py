@@ -34,7 +34,7 @@ import FreeCAD
 
 __title__ = "vision_5"
 __author__ = "Me"
-__url__ = "https://github.com/Freedman-CB1/Macro-Vision"
+__url__ = "https://github.com/Freedman-CB1/Macro-Vision/freecad/Vision_5"
 
 path_V5 = os.path.dirname(vision_5.__file__)
 
