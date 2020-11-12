@@ -44,7 +44,7 @@ class Vision_5_Workbench(Workbench):
     "Vision_5 workbench object"
     def __init__(self):
         self.__class__.Icon = joinDir("vision_5.svg")
-        self.__class__.MenuText = "Vision_5"
+        self.__class__.MenuText = "vision_5"
         self.__class__.ToolTip = "Vision"
 
     def Initialize(self):
