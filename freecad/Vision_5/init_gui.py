@@ -32,19 +32,19 @@
 
 import FreeCAD
 
-__title__ = "Vision_5"
+__title__ = "vision_5"
 __author__ = "Me"
 __url__ = "https://github.com/Freedman-CB1/Macro-Vision"
 
 path_V5 = os.path.dirname(vision_5.__file__)
 
-class Vision_5_Workbench(Workbench):
+class vision_5_Workbench(Workbench):
 
     
     "Vision_5 workbench object"
     def __init__(self):
         self.__class__.Icon = joinDir("vision_5.svg")
-        self.__class__.MenuText = "Vision_5"
+        self.__class__.MenuText = "vision_5"
         self.__class__.ToolTip = "Vision"
 
     def Initialize(self):
@@ -65,4 +65,4 @@ class Vision_5_Workbench(Workbench):
     def GetClassName(self):
         return "Gui::PythonWorkbench"
 
-FreeCADGui.addWorkbench(Vision_5_Workbench())
+FreeCADGui.addWorkbench(vision_5_Workbench())
