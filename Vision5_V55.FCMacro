@@ -820,8 +820,8 @@ class CB_ToolBox(QtGui.QDockWidget):
                     self.c -=225
                 if hasattr(obj.ViewObject,'ShapeColor'):
                     obj.ViewObject.ShapeColor = (self.a,self.b,self.c)
-                if hasattr(obj.ViewObject,'PointColor'):                            
-                    obj.ViewObject.PointColor = (self.a,self.b,self.c)
+      #          if hasattr(obj.ViewObject,'PointColor'):                            
+      #              obj.ViewObject.PointColor = (self.a,self.b,self.c)
       
     def process_selects(self,pnt,element):
         if  self.show_object ==  True or   self.pic_vis_at == True:      
