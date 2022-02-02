@@ -876,7 +876,7 @@ class CB_ToolBox(QtGui.QDockWidget):
                             self.pad.ViewObject.PointSize  =  1.0  #self.page_number   #self.small_point_size
                             self.pad.ViewObject.DisplayMode  = self.dmode_text 
                           
-                    #    self.pad.ViewObject.PointColor = self.pad.ViewObject.ShapeColor
+                        self.pad.ViewObject.PointColor = self.pad.ViewObject.ShapeColor
                 
              #   Gui.Selection.clearSelection()               
             except:
